@@ -10,6 +10,11 @@
     "brain-games": "bin/brain-games.js"
   },
   "type": "module",
+  "dependencies": {
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "readline-sync": "^1.4.10"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/IlliaTemnov/frontend-project-lvl1.git"
