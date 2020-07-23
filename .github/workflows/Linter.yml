@@ -15,7 +15,7 @@ jobs:
 
     steps:
     - name: Git clone my repo
-      run: actions/checkout@v1
+      run: actions/checkout@v2
       
     - name: make
       # Install and buld project
