@@ -22,6 +22,8 @@ jobs:
     # Install and build project
     - name: npm install, build, eslint
       run: make install
+    - name: eslint init
+      run: npx eslint --init
     # Runs a single command using the runners shell
     - name: Run linter
         # Run Linter
