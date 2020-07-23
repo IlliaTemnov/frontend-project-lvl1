@@ -13,11 +13,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [13.x]
-
     steps:
+    - name: Git clone my repo
+      run: actions/checkout@v1
+      
     - name: make
       # Install and buld project
       run: |
