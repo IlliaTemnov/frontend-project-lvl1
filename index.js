@@ -31,6 +31,13 @@ const playGameRounds = (gameRound, userName) => {
       return console.log(`Congratulations, ${userName}!`);
     }
     }
-} 
+}
 
-export { makeGreeting, getRandomInt, isEven, getRandomSign, playGameRounds};
+const findGSD = (a, b) => {
+  if (b == 0) {
+    return a;
+}
+return findGSD(b, a % b);
+};
+
+export { makeGreeting, getRandomInt, isEven, getRandomSign, playGameRounds, findGSD};
