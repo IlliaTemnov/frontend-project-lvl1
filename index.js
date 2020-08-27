@@ -64,5 +64,16 @@ const changeArrElToDoubleDot = (arr) => {
   return result;
 }
 
+const isPrime = (num) => {
+  for(var i = 2; i < num; i++)
+    if(num % i === 0) return 'no';
+  return 'yes';
+}
 
-export { makeGreeting, getRandomInt, isEven, getRandomSign, playGameRounds, findGSD, createArithmeticProgressionArr, changeArrElToDoubleDot };
+const isAnswerCorrect = (userAnswer, correctAnswer, userName) => {
+  const result = correctAnswer === userAnswer ? true : false;
+  if (result === false) { return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`) }
+  return result;
+}
+
+export { makeGreeting, getRandomInt, isEven, getRandomSign, playGameRounds, findGSD, createArithmeticProgressionArr, changeArrElToDoubleDot, isPrime, isAnswerCorrect };

@@ -1,5 +1,5 @@
 import { sayHello, getUserName, getUserAnswer } from '../cli.js';
-import { makeGreeting, getRandomInt, getRandomSign, playGameRounds} from '../index.js';
+import { makeGreeting, getRandomInt, getRandomSign, playGameRounds, isAnswerCorrect} from '../index.js';
 
 const brainCalcRound = (userName) => {
   const minValue = 1;
@@ -10,8 +10,7 @@ const brainCalcRound = (userName) => {
   console.log(`Question: ${firstRandomInt} ${randomSign} ${secondRandomInt}`);
   const userAnswer = getUserAnswer();
   const correctAnswer = eval(`${firstRandomInt} ${randomSign} ${secondRandomInt}`);
-  const result =  correctAnswer.toString() === userAnswer ? true : false;
-  if (result === false) { return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}. Let's try again, ${userName}!`) }
+  const result = isAnswerCorrect(userAnswer, correctAnswer, userName);
   return result;
 }
 

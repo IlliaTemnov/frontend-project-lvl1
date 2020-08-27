@@ -1,5 +1,5 @@
 import { sayHello, getUserName, getUserAnswer } from '../cli.js';
-import { makeGreeting, getRandomInt, playGameRounds, findGSD} from '../index.js';
+import { makeGreeting, getRandomInt, playGameRounds, findGSD, isAnswerCorrect} from '../index.js';
 
 const brainGCDRound = (userName) => {
   const minValue = 1;
@@ -9,8 +9,7 @@ const brainGCDRound = (userName) => {
   console.log(`Question: ${firstRandomInt} ${secondRandomInt}`);
   const userAnswer = getUserAnswer();
   const correctAnswer = findGSD(firstRandomInt, secondRandomInt);
-  const result = correctAnswer.toString() === userAnswer ? true : false;
-  if (result === false) { return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}. Let's try again, ${userName}!`) }
+  const result = isAnswerCorrect(userAnswer, correctAnswer, userName);
   return result;
 };
 

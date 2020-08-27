@@ -16,3 +16,7 @@ Game: "Greatest common divisor"
 Game: "Arithmetic progression"
 
   [![asciicast](https://asciinema.org/a/ZD8ZaUQheweVGjDzZkiMYSZcx.svg)](https://asciinema.org/a/ZD8ZaUQheweVGjDzZkiMYSZcx)
+
+Game: "Is prime number"
+
+  [![asciicast](https://asciinema.org/a/uY0l2TzlUQfu5Z55VI9tLJfNh.svg)](https://asciinema.org/a/uY0l2TzlUQfu5Z55VI9tLJfNh)
