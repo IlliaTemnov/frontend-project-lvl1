@@ -1,4 +1,4 @@
-import { sayHello, getUserName } from './cli.js';
+import { sayHello, getUserName } from '../cli.js';
 
 const makeGreeting = () => {
 console.log('Welcome to the Brain Games!');

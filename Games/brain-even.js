@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import { makeGreeting } from './brain-games.js';
-import { sayHello, getUserName } from './cli.js';
+import { sayHello, getUserName } from '../cli.js';
 
 const printGameRules = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no"');
@@ -11,18 +11,17 @@ const getRandomInt = (min, max) => {
 };
 
 const isEven = (num) => {
-  const result = num % 2 === 0 ? true : false;
+  const result = num % 2 === 0 ? 'yes' : 'no';
   return result;
 };
 
 const getUserAnswer = () => {
   let userAnswer = readlineSync.question('Your answer: ');
-  userAnswer = userAnswer === 'yes'? true : false;
   return  userAnswer;
 }
 
-const askQuestion = (randomInt) => {
-  console.log(`Question: ${randomInt}`);
+const askQuestion = ( ...args) => {
+  console.log(`Question: ${args}`);
 }
 
 const brainEvenRound = () => {
@@ -57,4 +56,4 @@ const brainEvenGame = () => {
   }
 }
 
-export { brainEvenGame };
+export { brainEvenGame, getRandomInt, getUserAnswer };
