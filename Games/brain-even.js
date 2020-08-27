@@ -20,4 +20,4 @@ const brainEvenGame = () => {
   playGameRounds(brainEvenRound, userName);
 }
 
-export { brainEvenGame, getRandomInt, getUserAnswer };
+export { brainEvenGame };

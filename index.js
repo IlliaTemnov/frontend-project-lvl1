@@ -20,7 +20,7 @@ const getRandomSign = (...args) => {
 const playGameRounds = (gameRound, userName) => {
   const maxRounds = 3;
   let counterOfWins = 0;
-  for (let i = 0; i < maxRounds; i++) {
+  for (let i = 0; i < maxRounds; i += 1) {
     let round = gameRound(userName);
     if (!round) { return }
     if (round) {
@@ -40,4 +40,29 @@ const findGSD = (a, b) => {
 return findGSD(b, a % b);
 };
 
-export { makeGreeting, getRandomInt, isEven, getRandomSign, playGameRounds, findGSD};
+const createArithmeticProgressionArr = () => {
+  const arrLength = 10;
+  const minStartNumber = 1;
+  const maxStartNumber = 50;
+  const minStep = 2;
+  const maxStep = 9;
+  const step = getRandomInt(minStep, maxStep);
+  let startNumber = getRandomInt(minStartNumber, maxStartNumber);
+  let arithmeticProgressionArr = [startNumber];
+  for (let i = 1; i < arrLength; i += 1) {
+    startNumber = startNumber + step
+    arithmeticProgressionArr.push(startNumber);
+  }
+  return arithmeticProgressionArr;
+}
+
+
+const changeArrElToDoubleDot = (arr) => {
+  const positionIndex = getRandomInt(0, arr.length-1);
+  const cutEl = arr.splice(positionIndex, 1, "..");
+  const result = [arr.join(' '), cutEl.join('')];
+  return result;
+}
+
+
+export { makeGreeting, getRandomInt, isEven, getRandomSign, playGameRounds, findGSD, createArithmeticProgressionArr, changeArrElToDoubleDot };

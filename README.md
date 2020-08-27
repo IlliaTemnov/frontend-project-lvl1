@@ -9,3 +9,6 @@ Game: "Calculator"
 
 Game: "Greatest common divisor"
   [![asciicast](https://asciinema.org/a/OAN3tn31iyuHErQutZ0dTMEME.svg)](https://asciinema.org/a/OAN3tn31iyuHErQutZ0dTMEME)
+
+Game: "Arithmetic progression"
+  [![asciicast](https://asciinema.org/a/ZD8ZaUQheweVGjDzZkiMYSZcx.svg)](https://asciinema.org/a/ZD8ZaUQheweVGjDzZkiMYSZcx)
