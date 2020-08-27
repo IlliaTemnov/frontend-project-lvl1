@@ -2,8 +2,8 @@
 ![Linter](https://github.com/IlliaTemnov/frontend-project-lvl1/workflows/Linter/badge.svg)
 
 Brain-even:
-  <a href="https://asciinema.org/a/1WGxxzIjIkLyfWt75SBXYjFcv" target="_blank"><img src="https://asciinema.org/a/1WGxxzIjIkLyfWt75SBXYjFcv.svg" /></a>
+  [![asciicast](https://asciinema.org/a/1WGxxzIjIkLyfWt75SBXYjFcv.svg)](https://asciinema.org/a/1WGxxzIjIkLyfWt75SBXYjFcv)
 
 Brain-calc: 
-  <a href="https://asciinema.org/a/J2r3YSQhTYcuKD19NlbK1KGTH" target="_blank"><img src="https://asciinema.org/a/J2r3YSQhTYcuKD19NlbK1KGTH.svg" /></a>
+  [![asciicast](https://asciinema.org/a/J2r3YSQhTYcuKD19NlbK1KGTH.svg)](https://asciinema.org/a/J2r3YSQhTYcuKD19NlbK1KGTH)
 
