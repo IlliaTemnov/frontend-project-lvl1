@@ -22,4 +22,4 @@ const brainGCDGame = () => {
   playGameRounds( brainGCDRound, userName);
 }
 
-export { brainGCD };
+export { brainGCDGame };

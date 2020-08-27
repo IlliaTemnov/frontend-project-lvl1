@@ -2,13 +2,17 @@
 ![Linter](https://github.com/IlliaTemnov/frontend-project-lvl1/workflows/Linter/badge.svg)
 
 Game: "Parity check"
+
   [![asciicast](https://asciinema.org/a/1WGxxzIjIkLyfWt75SBXYjFcv.svg)](https://asciinema.org/a/1WGxxzIjIkLyfWt75SBXYjFcv)
 
 Game: "Calculator"
+
   [![asciicast](https://asciinema.org/a/J2r3YSQhTYcuKD19NlbK1KGTH.svg)](https://asciinema.org/a/J2r3YSQhTYcuKD19NlbK1KGTH)
 
 Game: "Greatest common divisor"
+
   [![asciicast](https://asciinema.org/a/OAN3tn31iyuHErQutZ0dTMEME.svg)](https://asciinema.org/a/OAN3tn31iyuHErQutZ0dTMEME)
 
 Game: "Arithmetic progression"
+
   [![asciicast](https://asciinema.org/a/ZD8ZaUQheweVGjDzZkiMYSZcx.svg)](https://asciinema.org/a/ZD8ZaUQheweVGjDzZkiMYSZcx)
