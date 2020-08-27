@@ -9,4 +9,9 @@ const sayHello = (name) => {
   console.log(`Hello, ${name}!`);
 }
 
-export { sayHello, getUserName };
+const getUserAnswer = () => {
+  let userAnswer = readlineSync.question('Your answer: ');
+  return  userAnswer;
+}
+
+export { sayHello, getUserName, getUserAnswer };
