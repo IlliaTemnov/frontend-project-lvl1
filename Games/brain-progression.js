@@ -1,5 +1,5 @@
 import { sayHello, getUserName, getUserAnswer } from '../cli.js';
-import { makeGreeting, playGameRounds, createArithmeticProgressionArr, changeArrElToDoubleDot } from '../index.js';
+import { makeGreeting, playGameRounds, createArithmeticProgressionArr, changeArrElToDoubleDot, isAnswerCorrect } from '../index.js';
 
 
 const brainProgressionRound = (userName) => {
@@ -7,8 +7,7 @@ const brainProgressionRound = (userName) => {
   console.log(`Question: ${randomArithmeticProgressionArr[0]}`);
   const userAnswer = getUserAnswer();
   const correctAnswer = randomArithmeticProgressionArr[1];
-  const result = correctAnswer === userAnswer ? true : false;
-  if (result === false) { return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}. Let's try again, ${userName}!`) }
+  const result = isAnswerCorrect(userAnswer, correctAnswer, userName);
   return result;
 };
 
