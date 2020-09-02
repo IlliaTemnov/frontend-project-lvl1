@@ -3,20 +3,20 @@
 
 Game: "Parity check"
 
-  [![asciicast](https://asciinema.org/a/1WGxxzIjIkLyfWt75SBXYjFcv.svg)](https://asciinema.org/a/1WGxxzIjIkLyfWt75SBXYjFcv)
+  [![asciicast](https://asciinema.org/a/7lMcNnxI8Z5sgazHv19ttMcqP.svg)](https://asciinema.org/a/7lMcNnxI8Z5sgazHv19ttMcqP)
 
 Game: "Calculator"
 
-  [![asciicast](https://asciinema.org/a/J2r3YSQhTYcuKD19NlbK1KGTH.svg)](https://asciinema.org/a/J2r3YSQhTYcuKD19NlbK1KGTH)
+  [![asciicast](https://asciinema.org/a/Ih03rU48b4vvl1Eo7sgZZpUKF.svg)](https://asciinema.org/a/Ih03rU48b4vvl1Eo7sgZZpUKF)
 
 Game: "Greatest common divisor"
 
-  [![asciicast](https://asciinema.org/a/OAN3tn31iyuHErQutZ0dTMEME.svg)](https://asciinema.org/a/OAN3tn31iyuHErQutZ0dTMEME)
+  [![asciicast](https://asciinema.org/a/LG8KShaMGuh3zHcpHi0tPT4Ao.svg)](https://asciinema.org/a/LG8KShaMGuh3zHcpHi0tPT4Ao)
 
 Game: "Arithmetic progression"
 
-  [![asciicast](https://asciinema.org/a/ZD8ZaUQheweVGjDzZkiMYSZcx.svg)](https://asciinema.org/a/ZD8ZaUQheweVGjDzZkiMYSZcx)
+  [![asciicast](https://asciinema.org/a/yyPJD9m0niiCyFaed1VBKo5Bm.svg)](https://asciinema.org/a/yyPJD9m0niiCyFaed1VBKo5Bm)
 
 Game: "Is prime number"
 
-  [![asciicast](https://asciinema.org/a/uY0l2TzlUQfu5Z55VI9tLJfNh.svg)](https://asciinema.org/a/uY0l2TzlUQfu5Z55VI9tLJfNh)
+  [![asciicast](https://asciinema.org/a/lZZIiJ7DjSewp5EvPGiRkv7zL.svg)](https://asciinema.org/a/lZZIiJ7DjSewp5EvPGiRkv7zL)

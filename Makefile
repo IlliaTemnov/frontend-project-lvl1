@@ -24,6 +24,3 @@ publish:
 
 lint:
 	npx eslint .
-
-link:
-	npm link
