@@ -1,11 +1,8 @@
-import { getUserAnswer } from '../cli.js';
 import {
-  isAnswerCorrect, getRandomInt, game,
+  getRandomInt, game, compareAnswers,
 } from '../index.js';
 
-const printGameRules = () => {
-  console.log('What number is missing in the progression?');
-};
+const gameRules = 'What number is missing in the progression?';
 
 const createArithmeticProgressionArr = () => {
   const arrLength = 10;
@@ -30,14 +27,13 @@ const changeArrElToDoubleDot = (arr) => {
   return result;
 };
 
-const brainProgressionRound = (userName) => {
+const gameRound = (userName) => {
   const randomArithmeticProgressionArr = changeArrElToDoubleDot(createArithmeticProgressionArr());
   console.log(`Question: ${randomArithmeticProgressionArr[0]}`);
-  const userAnswer = getUserAnswer();
   const correctAnswer = randomArithmeticProgressionArr[1];
-  return isAnswerCorrect(userAnswer, correctAnswer, userName);
+  return compareAnswers(correctAnswer, userName);
 };
 
-const playGame = () => game(printGameRules, brainProgressionRound);
+const playGame = () => game(gameRules, gameRound);
 
 export default playGame;

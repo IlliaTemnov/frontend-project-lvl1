@@ -1,25 +1,21 @@
-import { getUserAnswer } from '../cli.js';
 import {
-  getRandomInt, isAnswerCorrect, game, minValue, maxValue,
+  game, getRandIntFromHundred, compareAnswers,
 } from '../index.js';
 
-const printGameRules = () => {
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no"');
-};
+const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
 const isPrime = (num) => {
   for (let i = 2; i < num; i += 1) if (num % i === 0) return 'no';
   return 'yes';
 };
 
-const brainIsPrimeRound = (userName) => {
-  const randomInt = getRandomInt(minValue, maxValue);
+const gameRound = (userName) => {
+  const randomInt = getRandIntFromHundred();
   console.log(`Question: ${randomInt}`);
-  const userAnswer = getUserAnswer();
   const correctAnswer = isPrime(randomInt);
-  return isAnswerCorrect(userAnswer, correctAnswer, userName);
+  return compareAnswers(correctAnswer, userName);
 };
 
-const playGame = () => game(printGameRules, brainIsPrimeRound);
+const playGame = () => game(gameRules, gameRound);
 
 export default playGame;

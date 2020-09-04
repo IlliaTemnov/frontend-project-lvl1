@@ -1,11 +1,8 @@
-import { getUserAnswer } from '../cli.js';
 import {
-  getRandomInt, isAnswerCorrect, game, minValue, maxValue,
+  getRandomInt, game, getRandIntFromHundred, compareAnswers,
 } from '../index.js';
 
-const printGameRules = () => {
-  console.log('What is the result of the expression?');
-};
+const gameRules = 'What is the result of the expression?';
 
 const getRandomSign = (...args) => {
   const minNum = 1;
@@ -31,16 +28,15 @@ const calculate = (sign, num1, num2) => {
   return result;
 };
 
-const brainCalcRound = (userName) => {
-  const firstRandomInt = getRandomInt(minValue, maxValue);
-  const secondRandomInt = getRandomInt(minValue, maxValue);
+const gameRound = (userName) => {
+  const firstRandomInt = getRandIntFromHundred();
+  const secondRandomInt = getRandIntFromHundred();
   const randomSign = getRandomSign('+', '-', '*');
   console.log(`Question: ${firstRandomInt} ${randomSign} ${secondRandomInt}`);
-  const userAnswer = getUserAnswer();
   const correctAnswer = String(calculate(randomSign, firstRandomInt, secondRandomInt));
-  return isAnswerCorrect(userAnswer, correctAnswer, userName);
+  return compareAnswers(correctAnswer, userName);
 };
 
-const playGame = () => game(printGameRules, brainCalcRound);
+const playGame = () => game(gameRules, gameRound);
 
 export default playGame;

@@ -1,11 +1,8 @@
-import { getUserAnswer } from '../cli.js';
 import {
-  getRandomInt, isAnswerCorrect, game, minValue, maxValue,
+  game, getRandIntFromHundred, compareAnswers,
 } from '../index.js';
 
-const printGameRules = () => {
-  console.log('Find the greatest common divisor of given numbers.');
-};
+const gameRules = 'Find the greatest common divisor of given numbers.';
 
 const findGSD = (a, b) => {
   if (b === 0) {
@@ -14,15 +11,14 @@ const findGSD = (a, b) => {
   return findGSD(b, a % b);
 };
 
-const brainGCDRound = (userName) => {
-  const firstRandomInt = getRandomInt(minValue, maxValue);
-  const secondRandomInt = getRandomInt(minValue, maxValue);
+const gameRound = (userName) => {
+  const firstRandomInt = getRandIntFromHundred();
+  const secondRandomInt = getRandIntFromHundred();
   console.log(`Question: ${firstRandomInt} ${secondRandomInt}`);
-  const userAnswer = getUserAnswer();
   const correctAnswer = findGSD(firstRandomInt, secondRandomInt);
-  return isAnswerCorrect(userAnswer, String(correctAnswer), userName);
+  return compareAnswers(String(correctAnswer), userName);
 };
 
-const playGame = () => game(printGameRules, brainGCDRound);
+const playGame = () => game(gameRules, gameRound);
 
 export default playGame;
