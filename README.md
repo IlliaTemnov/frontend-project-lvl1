@@ -1,5 +1,5 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/71f8e550658aa9c68326/maintainability)](https://codeclimate.com/github/IlliaTemnov/frontend-project-lvl1/maintainability)
-![Node CI](https://github.com/IlliaTemnov/frontend-project-lvl1/workflows/.github/workflows/Node%20CI/badge.svg)
+![Node CI](https://github.com/IlliaTemnov/frontend-project-lvl1/workflows/Node%20CI/badge.svg)
 
 Game: "Parity check"
 
