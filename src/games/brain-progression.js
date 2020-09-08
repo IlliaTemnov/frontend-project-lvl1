@@ -3,7 +3,7 @@ import getRandomIntFromInterval from '../randomInt.js';
 
 const gameRules = 'What number is missing in the progression?';
 
-const createArithmeticProgressionArr = () => {
+const createAPArr = () => {
   const arrLength = 10;
   const step = getRandomIntFromInterval(2, 9);
   let startNumber = getRandomIntFromInterval(1, 50);
@@ -15,16 +15,16 @@ const createArithmeticProgressionArr = () => {
   return arithmeticProgressionArr;
 };
 
-const changeRandomArrElToDoubleDot = (arr) => {
+const changeArrElToDoubleDot = (arr) => {
   const positionIndex = getRandomIntFromInterval(0, arr.length - 1);
   const cutEl = arr.splice(positionIndex, 1, '..');
   return [arr.join(' '), cutEl.join('')];
 };
 
 const getGameRoundData = () => {
-  const progressionArr = changeRandomArrElToDoubleDot(createArithmeticProgressionArr());
-  const gameRoundQuestion = `${progressionArr[0]}`;
-  const gameRoundAnswer = progressionArr[1];
+  const [roundQuestion, correctAnswer] = changeArrElToDoubleDot(createAPArr());
+  const gameRoundQuestion = `${roundQuestion}`;
+  const gameRoundAnswer = correctAnswer;
   return [gameRoundQuestion, gameRoundAnswer];
 };
 
