@@ -3,11 +3,7 @@ import getRandomIntFromInterval from '../randomInt.js';
 
 const gameRules = 'What is the result of the expression?';
 
-const getRandomSign = (...args) => {
-  const minNum = 1;
-  const maxNum = args.length - 1;
-  return args[getRandomIntFromInterval(minNum, maxNum)];
-};
+const getRandomSign = (...args) => args[getRandomIntFromInterval(1, args.length - 1)];
 
 const calculate = (sign, num1, num2) => {
   switch (sign) {
