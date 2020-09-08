@@ -1,42 +1,34 @@
-import {
-  getRandomInt, game, getRandIntFromHundred, compareAnswers,
-} from '../index.js';
+import playGame from '../index.js';
+import getRandomIntFromInterval from '../randomInt.js';
 
 const gameRules = 'What is the result of the expression?';
 
 const getRandomSign = (...args) => {
   const minNum = 1;
   const maxNum = args.length - 1;
-  return args[getRandomInt(minNum, maxNum)];
+  return args[getRandomIntFromInterval(minNum, maxNum)];
 };
 
 const calculate = (sign, num1, num2) => {
-  let result;
   switch (sign) {
     case '+':
-      result = num1 + num2;
-      break;
+      return num1 + num2;
     case '-':
-      result = num1 - num2;
-      break;
+      return num1 - num2;
     case '*':
-      result = num1 * num2;
-      break;
+      return num1 * num2;
     default:
       throw new Error(`Unknown sign: '${sign}'!`);
   }
-  return result;
 };
 
-const gameRound = (userName) => {
-  const firstRandomInt = getRandIntFromHundred();
-  const secondRandomInt = getRandIntFromHundred();
+const getGameRoundData = () => {
+  const num1 = getRandomIntFromInterval(1, 100);
+  const num2 = getRandomIntFromInterval(1, 100);
   const randomSign = getRandomSign('+', '-', '*');
-  console.log(`Question: ${firstRandomInt} ${randomSign} ${secondRandomInt}`);
-  const correctAnswer = String(calculate(randomSign, firstRandomInt, secondRandomInt));
-  return compareAnswers(correctAnswer, userName);
+  const gameRoundQuestion = `${num1} ${randomSign} ${num2}`;
+  const gameRoundAnswer = String(calculate(randomSign, num1, num2));
+  return [gameRoundQuestion, gameRoundAnswer];
 };
 
-const playGame = () => game(gameRules, gameRound);
-
-export default playGame;
+export default () => playGame(gameRules, getGameRoundData);

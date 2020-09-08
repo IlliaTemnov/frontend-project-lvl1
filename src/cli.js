@@ -14,4 +14,13 @@ const getUserAnswer = () => {
   return userAnswer;
 };
 
-export { sayHello, getUserName, getUserAnswer };
+const makeGreeting = () => {
+  console.log('Welcome to the Brain Games!');
+  const userName = getUserName();
+  sayHello(userName);
+  return userName;
+};
+
+export {
+  sayHello, getUserName, getUserAnswer, makeGreeting,
+};

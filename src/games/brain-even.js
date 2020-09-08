@@ -1,21 +1,12 @@
-import {
-  getRandIntFromHundred, game, compareAnswers,
-} from '../index.js';
+import playGame from '../index.js';
+import getRandomIntFromInterval from '../randomInt.js';
 
 const gameRules = 'Answer "yes" if the number is even, otherwise answer "no"';
 
-const isEven = (num) => {
-  const result = num % 2 === 0 ? 'yes' : 'no';
-  return result;
+const getGameRoundData = () => {
+  const gameRoundQuestion = getRandomIntFromInterval(1, 100);
+  const gameRoundAnswer = gameRoundQuestion % 2 === 0 ? 'yes' : 'no';
+  return [gameRoundQuestion, gameRoundAnswer];
 };
 
-const gameRound = (userName) => {
-  const randomInt = getRandIntFromHundred();
-  console.log(`Question: ${randomInt}`);
-  const correctAnswer = isEven(randomInt);
-  return compareAnswers(correctAnswer, userName);
-};
-
-const playGame = () => game(gameRules, gameRound);
-
-export default playGame;
+export default () => playGame(gameRules, getGameRoundData);

@@ -1,7 +1,5 @@
-import { makeGreeting } from '../index.js';
+import { makeGreeting } from '../cli.js';
 
-const playGame = () => {
+export default () => {
   makeGreeting();
 };
-
-export default playGame;
