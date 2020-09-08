@@ -22,10 +22,8 @@ const changeArrElToDoubleDot = (arr) => {
 };
 
 const getGameRoundData = () => {
-  const [roundQuestion, correctAnswer] = changeArrElToDoubleDot(createAPArr());
-  const gameRoundQuestion = `${roundQuestion}`;
-  const gameRoundAnswer = correctAnswer;
-  return [gameRoundQuestion, gameRoundAnswer];
+  const [gameRoundQuestion, gameRoundAnswer] = changeArrElToDoubleDot(createAPArr());
+  return [String(gameRoundQuestion), gameRoundAnswer];
 };
 
 export default () => playGame(gameRules, getGameRoundData);
