@@ -4,11 +4,10 @@ import getRandomIntFromInterval from '../randomInt.js';
 const description = 'What number is missing in the progression?';
 const arrLength = 10;
 const startPoint = 2;
-const endPoint = 50;
 const endStepPoint = 9;
 
 const genArrStep = () => getRandomIntFromInterval(startPoint, endStepPoint);
-const genArrStart = () => getRandomIntFromInterval(startPoint, endPoint);
+const genArrStart = () => getRandomIntFromInterval(0, 100);
 const genArrIndex = () => getRandomIntFromInterval(0, arrLength - 1);
 
 const genAPArr = (step, start, index) => {
