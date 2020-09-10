@@ -1,12 +1,17 @@
 import playGame from '../index.js';
 import getRandomIntFromInterval from '../randomInt.js';
 
-const gameRules = 'Answer "yes" if the number is even, otherwise answer "no"';
+const description = 'Answer "yes" if the number is even, otherwise answer "no"';
 
-const getGameRoundData = () => {
-  const gameRoundQuestion = getRandomIntFromInterval(1, 100);
-  const gameRoundAnswer = gameRoundQuestion % 2 === 0 ? 'yes' : 'no';
-  return [gameRoundQuestion, gameRoundAnswer];
+const isEven = (num) => {
+  const result = num % 2 === 0;
+  return result;
 };
 
-export default () => playGame(gameRules, getGameRoundData);
+const genRoundData = () => {
+  const gameRoundQuestion = getRandomIntFromInterval(1, 100);
+  const gameRoundAnswer = isEven(gameRoundQuestion) ? 'yes' : 'no';
+  return { question: gameRoundQuestion, answer: gameRoundAnswer };
+};
+
+export default () => playGame(description, genRoundData);

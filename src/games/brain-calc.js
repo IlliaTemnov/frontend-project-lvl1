@@ -1,9 +1,12 @@
 import playGame from '../index.js';
 import getRandomIntFromInterval from '../randomInt.js';
 
-const gameRules = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
-const getRandomSign = (...args) => args[getRandomIntFromInterval(1, args.length - 1)];
+const getRandomSign = () => {
+  const signsArr = ['+', '-', '*'];
+  return signsArr[getRandomIntFromInterval(0, signsArr.length - 1)];
+};
 
 const calculate = (sign, num1, num2) => {
   switch (sign) {
@@ -18,13 +21,13 @@ const calculate = (sign, num1, num2) => {
   }
 };
 
-const getGameRoundData = () => {
+const genRoundData = () => {
   const num1 = getRandomIntFromInterval(1, 100);
   const num2 = getRandomIntFromInterval(1, 100);
-  const randomSign = getRandomSign('+', '-', '*');
+  const randomSign = getRandomSign();
   const gameRoundQuestion = `${num1} ${randomSign} ${num2}`;
   const gameRoundAnswer = String(calculate(randomSign, num1, num2));
-  return [gameRoundQuestion, gameRoundAnswer];
+  return { question: gameRoundQuestion, answer: gameRoundAnswer };
 };
 
-export default () => playGame(gameRules, getGameRoundData);
+export default () => playGame(description, genRoundData);

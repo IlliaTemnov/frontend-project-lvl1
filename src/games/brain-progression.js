@@ -1,29 +1,30 @@
 import playGame from '../index.js';
 import getRandomIntFromInterval from '../randomInt.js';
 
-const gameRules = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
+const arrLength = 10;
+const startPoint = 2;
+const endPoint = 50;
+const endStepPoint = 9;
 
-const createAPArr = () => {
-  const arrLength = 10;
-  const step = getRandomIntFromInterval(2, 9);
-  let startNumber = getRandomIntFromInterval(1, 50);
-  const arithmeticProgressionArr = [startNumber];
+const genArrStep = () => getRandomIntFromInterval(startPoint, endStepPoint);
+const genArrStart = () => getRandomIntFromInterval(startPoint, endPoint);
+const genArrIndex = () => getRandomIntFromInterval(0, arrLength - 1);
+
+const genAPArr = (step, start, index) => {
+  const aPPArr = [start];
+  let nextStep = start;
   for (let i = 1; i < arrLength; i += 1) {
-    startNumber += step;
-    arithmeticProgressionArr.push(startNumber);
+    nextStep += step;
+    aPPArr.push(nextStep);
   }
-  return arithmeticProgressionArr;
+  const cutEl = aPPArr.splice(index, 1, '..');
+  return [aPPArr.join(' '), cutEl.join('')];
 };
 
-const changeArrElToDoubleDot = (arr) => {
-  const positionIndex = getRandomIntFromInterval(0, arr.length - 1);
-  const cutEl = arr.splice(positionIndex, 1, '..');
-  return [arr.join(' '), cutEl.join('')];
+const genRoundData = () => {
+  const [gameRoundQuestion, gameRoundAnswer] = genAPArr(genArrStep(), genArrStart(), genArrIndex());
+  return { question: gameRoundQuestion, answer: gameRoundAnswer };
 };
 
-const getGameRoundData = () => {
-  const [gameRoundQuestion, gameRoundAnswer] = changeArrElToDoubleDot(createAPArr());
-  return [String(gameRoundQuestion), gameRoundAnswer];
-};
-
-export default () => playGame(gameRules, getGameRoundData);
+export default () => playGame(description, genRoundData);

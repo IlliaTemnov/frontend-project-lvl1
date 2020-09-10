@@ -2,21 +2,19 @@ import {
   getUserAnswer, makeGreeting,
 } from './cli.js';
 
-const playGame = (gameRules, getGameRoundData) => {
+const playGame = (description, getGameRoundData) => {
   const userName = makeGreeting();
-  console.log(gameRules);
+  console.log(description);
   const maxRounds = 3;
-  let gameRound = 0;
-  while (maxRounds !== gameRound) {
-    const [roundQuestion, roundCorrectAnswer] = getGameRoundData();
-    console.log(`Question: ${roundQuestion}`);
+  for (let i = 0; i < maxRounds; i += 1) {
+    const { question, answer } = getGameRoundData();
+    console.log(`Question: ${question}`);
     const userAnswer = getUserAnswer();
-    if (roundCorrectAnswer !== userAnswer) {
-      return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${roundCorrectAnswer}'. 
+    if (answer !== userAnswer) {
+      return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'. 
     Let's try again, ${userName}!`);
     }
     console.log('Correct!');
-    gameRound += 1;
   }
   return console.log(`Congratulations, ${userName}!`);
 };
