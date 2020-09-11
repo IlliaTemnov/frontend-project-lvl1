@@ -11,13 +11,13 @@ const playGame = (description, genRoundData) => {
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (answer !== userAnswer) {
-      return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'. 
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'. 
     Let's try again, ${userName}!`);
+      return;
     }
     console.log('Correct!');
   }
   console.log(`Congratulations, ${userName}!`);
-  return null;
 };
 
 export default playGame;
