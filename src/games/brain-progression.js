@@ -3,27 +3,30 @@ import getRandomIntFromInterval from '../randomInt.js';
 
 const description = 'What number is missing in the progression?';
 const arrLength = 10;
-const startPoint = 2;
+const startStepPoint = 2;
 const endStepPoint = 9;
 
-const genArrStep = () => getRandomIntFromInterval(startPoint, endStepPoint);
+const genArrStep = () => getRandomIntFromInterval(startStepPoint, endStepPoint);
 const genArrStart = () => getRandomIntFromInterval(0, 100);
-const genArrIndex = () => getRandomIntFromInterval(0, arrLength - 1);
+const genRandomIndexFromArr = () => getRandomIntFromInterval(0, arrLength - 1);
 
-const genAPArr = (step, start, index) => {
-  const aPPArr = [start];
-  let nextStep = start;
-  for (let i = 1; i < arrLength; i += 1) {
-    nextStep += step;
-    aPPArr.push(nextStep);
+const genProgression = (step, start) => {
+  const progression = [];
+  for (let i = 0; i <= arrLength - 1; i += 1) {
+    progression.push(start + step * i);
   }
-  const cutEl = aPPArr.splice(index, 1, '..');
-  return [aPPArr.join(' '), cutEl.join('')];
+  return progression;
 };
 
 const genRoundData = () => {
-  const [gameRoundQuestion, gameRoundAnswer] = genAPArr(genArrStep(), genArrStart(), genArrIndex());
-  return { question: gameRoundQuestion, answer: gameRoundAnswer };
+  const gameRoundQuestion = genProgression(
+    genArrStep(),
+    genArrStart(),
+  );
+  const index = genRandomIndexFromArr();
+  const gameRoundAnswer = gameRoundQuestion[index];
+  gameRoundQuestion[index] = '..';
+  return { question: gameRoundQuestion.join(' '), answer: String(gameRoundAnswer) };
 };
 
 export default () => playGame(description, genRoundData);
